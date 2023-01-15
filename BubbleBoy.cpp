@@ -78,8 +78,6 @@ int main()
         cv::morphologyEx(fgMask, fgMask, cv::MORPH_OPEN, element);
         cv::morphologyEx(fgMask, fgMask, cv::MORPH_CLOSE, element);
 
-        imshow("After Morphology", fgMask);
-
 
 
         // Contours and convexHull
@@ -107,7 +105,7 @@ int main()
             for (int i = 0; i < hull.size(); ++i)
             {
                 // For each 10 degree increment around the circle
-                for (int j = 0; j <= 360; j = j + 10)
+                for (int j = 0; j <= 360; j = j + 5)
                 {
                     new_angle = j;
                     new_xx = xx + (d * cos(new_angle * PI / 180));
@@ -128,6 +126,9 @@ int main()
 
         // Drawing Circle
         cv::circle(frame_flipped, cv::Point(xx, yy), 20, (0, 0, 255), 2);
+
+        cv::circle(fgMask, cv::Point(xx, yy), 20, (0, 0, 255), 2);
+        imshow("After Morphology", fgMask);
 
         // Calculating next circle location
         xx = xx + (d * cos(angle * PI / 180));
