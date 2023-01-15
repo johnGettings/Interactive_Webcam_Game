@@ -1,6 +1,8 @@
 # Real time hand keypoint detection through motion
 
-A simple program I made with traditional computer vision techiniques in OpenCV. Unlike every other hand detection method I found on github, you do not need to isolte your hand against a plain wall. It works by using background subtraction to find keypoints instead of simple image transforms to a binary image.
+A simple program I made with traditional computer vision techiniques in OpenCV. Unlike every other hand detection method I found on github, you do not need to isolte your hand against a plain wall. It works by using background subtraction to find keypoints instead of simple image transforms to a binary image. Check out demo video at bottom.
+
+![Example Still](./DemoImg.jpg)
 
 ### 1) Image transform
 Mirror, convert to grayscale, and blur webcam frame
@@ -18,3 +20,6 @@ Draw a circle and have it switch direction when hitting a wall or coming in cont
 In order to detect collision, use pointPolygonTest function to check if a point within the radius of the circle (10 degree incriments) is within any of the convex hull keypoints.
 
 
+
+# Demo Video
+[![Demo Video](https://img.youtube.com/vi/BcvmFCeth8M/0.jpg)](https://www.youtube.com/watch?v=BcvmFCeth8M)
